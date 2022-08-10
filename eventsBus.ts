@@ -1,6 +1,6 @@
 const subscription = {};
 
-const subscribe = (eventName, callback) => {
+const subscribe = (eventName: string, callback: Function) => {
     if (!subscription[eventName]) {
         subscription[eventName] = new Set();
     }
@@ -15,7 +15,7 @@ const subscribe = (eventName, callback) => {
         }
     }
 }
-const broadcast = (eventName, ...args) => {
+const broadcast = (eventName: string, ...args: any) => {
     if (!subscription[eventName]) {
         return;
     }
@@ -23,4 +23,8 @@ const broadcast = (eventName, ...args) => {
     for (const calback of callbacks) {
         calback(...args);
     }
+}
+export default {
+    subscribe, 
+    broadcast
 }

@@ -1,12 +1,12 @@
 import eventsBus from '../eventsBus';
 
-const eventName = 'test';
+const eventName: string = 'test';
 
-const subscribe = (calback) => {
+const subscribe = (calback: Function) => {
     return eventsBus.subscribe(eventName, calback)
 }
 
-const testEvent = (data) => {
+const testEvent = (data?: any) => {
     eventsBus.broadcast(eventName, data);
 }
 
