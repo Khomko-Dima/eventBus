@@ -24,3 +24,7 @@ const broadcast = (eventName, ...args) => {
         calback(...args);
     }
 }
+export default {
+    subscribe, 
+    broadcast
+}
